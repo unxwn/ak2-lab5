@@ -36,21 +36,26 @@ ls -l *.ko
 ### Prepare QEMU rootfs
 
 Copy modules to busybox install directory
-
+```bash
 cp hello1.ko hello2.ko ~/repos/busybox/_install/
-Recreate rootfs
+```
 
+Recreate rootfs
+```bash
 cd ~/repos/busybox/_install
 find . | cpio -H newc -o > ../../rootfs.cpio
 cd ../..
 gzip -f rootfs.cpio
+```
 
 ### Boot QEMU
 
+```bash
 qemu-system-arm -kernel ~/repos/busybox/_install/boot/zImage
 -initrd ~/repos/rootfs.cpio.gz
 -machine virt -nographic -m 512
 -append "root=/dev/ram0 rw console=ttyAMA0,115200 mem=512M"
+```
 
 ## Module Dependencies
 
