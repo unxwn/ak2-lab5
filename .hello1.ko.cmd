@@ -1,1 +1,0 @@
-cmd_/home/unknown/lab4-kernel-module-v2/hello1.ko := arm-linux-gnueabihf-ld -r -EL -z noexecstack --no-warn-rwx-segments -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /home/unknown/lab4-kernel-module-v2/hello1.ko /home/unknown/lab4-kernel-module-v2/hello1.o /home/unknown/lab4-kernel-module-v2/hello1.mod.o ;  true
